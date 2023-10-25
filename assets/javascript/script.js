@@ -7,4 +7,4 @@ setInterval(function() {
     } else {
         navbar.classList.add("hidden");
     }
-}, 500);
+}, 50);
