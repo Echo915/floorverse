@@ -13,15 +13,46 @@ body {
     background-color: #fff;
 }
 
+.menu-button {
+    display: none;
+    position: absolute;
+    top: 10px;
+    left: 10px;
+    cursor: pointer;
+}
+
+.overlay {
+    padding-top: 200px;
+    position: fixed;
+    color: #fff;
+    text-align: center;
+    right: 100%;
+    top: 0;
+    height: 100%;
+    width: 100%;
+    transition: 1s ease-in-out;
+    background-color: rgba(0, 0, 0, 1);
+    z-index: 11;
+}
+
+.overlay a {
+    display: block;
+    text-decoration: none;
+    color: #fff;
+    opacity: 0.7;
+    font-size: xx-large;
+}
+
+.overlay a:active {opacity: 1;}
+
 .social-handle {
     position: absolute;
     display: flex;
     width: 160px;
-    right: 0;
-    top: 0;
+    right: 10px;
+    top: 10px;
     text-align: center;
     align-items: center;
-    padding: 10px 0;
 }
 
 .social-handle a {
@@ -31,11 +62,11 @@ body {
     
 }
 
-.social-handle a:hover {
+.social-handle a:hover, .menu-button:hover {
     color: #ffcb04;
 }
 
-.social-handle a:active {
+.social-handle a:active, .menu-button:active {
     color: #fff;
 }
 
@@ -66,7 +97,7 @@ body {
     justify-content: center;
     background-color: white;
     transition: 0.5s ease-in-out;
-    z-index: 100;
+    z-index: 10;
     border-bottom: 1px solid gray;
 }
 
@@ -165,23 +196,70 @@ body {
 
 .colored-section .section-content {
     font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+    width: 55%; 
+    padding: 0 20px;
 }
 
 .colored-section .section-content img {
     position: absolute;
     right: 0;
     bottom: 0;
-    width: 500px;
-    height: 300px;
+    width: 30%;
+    /* height: 300px; */
 }
 
 .why-us i {
     position: absolute;
     color: rgb(236, 47, 106);
     font-size: 5rem;
-    margin-right: 30px;
+}
+
+.why-us .content {
+    width: 50%;
+    padding: 0 20px;
+    margin-left: 20px;
 }
 
 .why-us h2, .why-us p {
     margin-left: 100px;
 }
+
+
+/* -------------------------------------Styles for Mobile Devices ---------------------------- */
+@media screen and (max-width: 420px) {
+    .header-link {
+        display: none;
+    }
+
+    .menu-button {
+        display: block;
+    }
+
+    .card {
+        display: block;
+        width: 90%;
+        margin-bottom: 50px;
+        margin-top: 20px;
+    }
+
+    .colored-section .section-content {
+        width: 90%;
+    }
+
+    #about-us-img {
+        display: none;
+    }
+
+    .why-us i {
+        font-size: 3rem;
+    }
+
+    .why-us h2, .why-us p {
+        margin-left: 60px;
+    }
+
+    .why-us .content {
+        width: 80%;
+    }
+}
+

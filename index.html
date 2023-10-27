@@ -10,8 +10,19 @@
     <link rel="stylesheet" href="assets/vendors/themify-icons/css/themify-icons.css">
 </head>
 <body style="font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;">
+    <div id="overlay" class="overlay">
+        <div class="menu-button"><i class="ti-close" onclick="hide_overlay()"></i></div>
+        <div class="content">
+            <a href="index.html">Home</a>
+            <a href="index.html">Services</a>
+            <a href="index.html">About</a>
+            <a href="index.html">Get In Touch</a>
+        </div>
+    </div>
+
     <!-- Header Section -->
     <header class="header">
+        <div class="menu-button"><i onclick="show_overlay()" class="ti-menu"></i></div>
         <!-- Social Handle Section-->
         <div class="social-handle">
             <a class="social-link" href=""><i class="ti-facebook" aria-hidden="true"></i></a>
@@ -20,7 +31,8 @@
             <a class="social-link" href=""><i class="ti-instagram" aria-hidden="true"></i></a>
         </div>
         <!-- Fixed Nav -->
-        <div id="nav" class="nav hidden">   
+        <div id="nav" class="nav hidden">
+            <div class="menu-button"><i onclick="show_overlay()" class="ti-menu" style="color: black;"></i></div>   
             <a class="header-link" href="index.html">Home</a>
             <a class="header-link" href="index.html">Services</a>
             <a class="header-link" href="index.html">About</a>
@@ -102,23 +114,25 @@
         <!--About Us Section-->
         <div class="page-section colored-section">
             <h1 style="margin-left: 10px;">About Us</h1>
-            <div class="section-content" style="width: 55%; padding: 0 20px;">
+            <div class="section-content">
                 <p>We are more than builders; we are creators of dreams. With a passion for craftsmanship, we have been shaping landscapes and constructing dreams since our inception.</p>
                 <h2>Mission</h2>
                 <p>Our mission is to be the premier provider of construction and landscaping solutions, exceding clients' expectations by commiting to quality, innovation, and sustainability.</p>
                 <h2>Vision</h2>
                 <p>Our vision is to be a leader in the construction and landscaping industry, setting new standards of excellence and inspiring positive change in communities.</p>
+                <img id="about-us-img" alt="image" src="assets/images/construction.jpg">
             </div>
             <div class="section-content" style="width: 40%; position: absolute; right: 10px; bottom: 10px;">
-                <img alt="image" src="assets/images/construction.jpg">
+                
             </div>
         </div>
         <img style="width: 100%; margin: 0;" src="assets/images/engineer1.jpg">
+        <br><br>
 
         <!--Why Choose Us Section-->
         <div class="why-us">
             <h1 style="margin: 20px;">Why are we the best choice for you?</h1>
-            <div style="margin: 0 50px; width: 50%;">
+            <div class="content">
                 <div>
                     <i class="ti-paint-roller"></i><h2>Quality Materials</h2>
                     <p>We use the highest quality materials and employ the most advanced construction methods to ensure that your floors are beautiful and durable</p>

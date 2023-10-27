@@ -1,3 +1,13 @@
+function show_overlay() {
+    var overlay = document.getElementById("overlay");
+    overlay.style.right = "0";
+}
+
+function hide_overlay() {
+    var overlay = document.getElementById("overlay");
+    overlay.style.right = "100%";
+}
+
 var navbar = document.querySelector("#nav");
 var header = document.querySelector(".header-link"); 
 
