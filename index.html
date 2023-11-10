@@ -9,19 +9,34 @@
     <!-- font icons -->
     <link rel="stylesheet" href="assets/vendors/themify-icons/css/themify-icons.css">
 </head>
-<body style="font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;">
+<body>
     <div id="overlay" class="overlay">
         <div class="menu-button"><i class="ti-close" onclick="hide_overlay()"></i></div>
         <div class="content">
             <a href="index.html">Home</a>
-            <a href="index.html">Services</a>
-            <a href="index.html">About</a>
-            <a href="index.html">Get In Touch</a>
+            <a href="public_html/services.html">Services</a>
+            <a href="public_html/about.html">About</a>
+            <a href="public_html/contact.html">Contact</a>
         </div>
+    </div>
+
+    <!-- Fixed Nav -->
+    <div id="nav" class="nav hidden">
+        <div class="menu-button"><i onclick="show_overlay()" class="ti-menu" style="color: black;"></i></div>   
+        <a class="header-link" href="index.html">Home</a>
+        <a class="header-link" href="public_html/services.html">Services</a>
+        <a class="header-link" href="public_html/about.html">About</a>
+        <a class="header-link" href="public_html/contact.html">Contact</a>
     </div>
 
     <!-- Header Section -->
     <header class="header">
+        <div id="welcome-message" class="welcome-message">
+            <div id="message" class="message">
+                <div id="w1-container"><p id="w1">Floorverse says...</p></div>
+                <div id="w2-container"><p id="w2">Akwaaba!!</p></div>  
+            </div>
+        </div>
         <div class="menu-button"><i onclick="show_overlay()" class="ti-menu"></i></div>
         <!-- Social Handle Section-->
         <div class="social-handle">
@@ -29,14 +44,6 @@
             <a class="social-link" href=""><i class="ti-twitter" aria-hidden="true"></i></a>
             <a class="social-link" href=""><i class="ti-linkedin" aria-hidden="true"></i></a>
             <a class="social-link" href=""><i class="ti-instagram" aria-hidden="true"></i></a>
-        </div>
-        <!-- Fixed Nav -->
-        <div id="nav" class="nav hidden">
-            <div class="menu-button"><i onclick="show_overlay()" class="ti-menu" style="color: black;"></i></div>   
-            <a class="header-link" href="index.html">Home</a>
-            <a class="header-link" href="index.html">Services</a>
-            <a class="header-link" href="index.html">About</a>
-            <a class="header-link" href="index.html">Get In Touch</a>
         </div>
         <div class="header-link">
             <div class="header-link-container">
@@ -47,19 +54,14 @@
                 <div class="bottom-bar"></div>
             </div>
             <div class="header-link-container">
-                <a class="header-link" href="index.html">Services</a>
+                <a class="header-link" href="public_html/services.html">Services</a>
             </div>
             <div class="header-link-container">
-                <a class="header-link" href="index.html">About</a>
+                <a class="header-link" href="public_html/about.html">About</a>
             </div>
             <div class="header-link-container">
-                <a class="header-link" href="index.html">Get In Touch</a>
+                <a class="header-link" href="public_html/contact.html">Contact</a>
             </div>
-        </div>
-        <div class="welcome-message">
-            <!-- <h4>Welcome to</h4> -->
-            <!-- <h1>Floorverse</h1>
-            <h1>Construction & Tiling</h1> -->
         </div>
     </header>
 
@@ -67,7 +69,7 @@
     <main>
 
         <!--What we do Section-->
-        <div class="page-section">
+        <div class="page-section clearfix">
             <h1 style="margin: 20px;">What do we do?</h1>
             <div class="card">
                 <div class="card-header">
@@ -151,7 +153,20 @@
                 </div>
             </div>
         </div>
+        <div style="height: 300px;"></div>
     </main>
+    <footer>
+        <p>Follow us on social media</p>
+        <div class="social-handle">
+            <a class="social-link" href=""><i class="ti-facebook" aria-hidden="true"></i></a>
+            <a class="social-link" href=""><i class="ti-twitter" aria-hidden="true"></i></a>
+            <a class="social-link" href=""><i class="ti-linkedin" aria-hidden="true"></i></a>
+            <a class="social-link" href=""><i class="ti-instagram" aria-hidden="true"></i></a>
+        </div>
+        <div class="rights">
+            <p>floorverse | all rights reserved | <a href="mailto:support.floorverse@gmail.com">support.floorverse@gmail.com</a></p>
+        </div>
+    </footer>
     <script src="assets/javascript/script.js"></script>
 </body>
 </html>

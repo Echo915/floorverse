@@ -1,8 +1,10 @@
-html {
-    font-family: sans-serif;
+html, body {
+    /* font-family: sans-serif; */
     line-height: 1.15;
     -webkit-text-size-adjust: 100%;
     -webkit-tap-highlight-color: rgba(0, 0, 0, 0);
+    min-height: 100vh;
+    position: relative;
 }
 
 body {
@@ -11,14 +13,20 @@ body {
     font-weight: 400;
     line-height: 1.5;
     background-color: #fff;
+    transition-property: opacity;
+    transition-duration: 1s;
+    transition-timing-function: ease-in-out;
+    font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
 }
 
 .menu-button {
     display: none;
     position: absolute;
+    color: #fff;
     top: 10px;
     left: 10px;
     cursor: pointer;
+    z-index: 9;
 }
 
 .overlay {
@@ -53,6 +61,7 @@ body {
     top: 10px;
     text-align: center;
     align-items: center;
+    z-index: 9;
 }
 
 .social-handle a {
@@ -73,8 +82,7 @@ body {
 .header {
     padding: 50px;
     position: relative;
-    height: 80vh;
-    min-height: 600px;
+    min-height: 500px;
     background-image: -webkit-linear-gradient(bottom, rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.7)), url(../images/header.jpg);
     background-image: linear-gradient(to top, rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.7)), url(../images/header.jpg);
     background-size: cover;
@@ -83,6 +91,39 @@ body {
     background-repeat: no-repeat;
     background-attachment: fixed;
     color: #fff;
+}
+
+.welcome-message {
+    position: absolute;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    transition-property: background-color;
+    transition-duration: 3s;
+    transition-timing-function: ease-in-out;
+    background-color: rgba(0, 0, 0, 0);
+}
+
+.welcome-message .message {
+    margin-top: 250px;
+    margin-left: 8%;
+    transition: 2s;
+}
+
+.welcome-message .message #w1 {
+    position: absolute;
+    opacity: 0;
+    transition: 2s;
+}
+
+.welcome-message .message #w2 {
+    position: absolute;
+    right: 100%;
+    font-weight: bolder;
+    font-size: 5rem;
+    transition: 2s;
+    /* right: 0; */
 }
 
 .nav {
@@ -98,7 +139,7 @@ body {
     background-color: white;
     transition: 0.5s ease-in-out;
     z-index: 10;
-    border-bottom: 1px solid gray;
+    box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2);
 }
 
 .nav a {
@@ -125,9 +166,15 @@ body {
 }
 
 .header-link {
+    position: relative;
     text-decoration: none;
     color: #fff;
     font-weight: bold;
+    z-index: 9;
+}
+
+.header-link a:hover {
+    opacity: 0.7;
 }
 
 .bottom-bar {
@@ -136,16 +183,6 @@ body {
     height: 5px;
     background-color: #ffcb04;
     border-radius: 2px;
-}
-
-.welcome-message {
-    position: relative;
-    margin-top: 90px;
-    line-height: 20px;
-}
-
-.welcome-message h1 {
-    font-size: 4rem;
 }
 
 .card {
@@ -208,7 +245,7 @@ body {
     /* height: 300px; */
 }
 
-.why-us i {
+.why-us i, .core-v i {
     position: absolute;
     color: rgb(236, 47, 106);
     font-size: 5rem;
@@ -224,11 +261,182 @@ body {
     margin-left: 100px;
 }
 
+footer {
+    position: relative;
+    height: 100px;
+    bottom: 0;
+    padding: 0 20px;
+    font-size: small;
+    /* font-weight: bolder; */
+    color: #fff;
+    background-color: #021624;
+    border-top: 1px solid black;
+}
+
+footer .social-handle {
+    left: 0;
+    top: 50px;
+}
+
+footer .rights {
+    position: absolute;
+    bottom: 0;
+    text-align: center;
+    width: 90%;
+    margin: auto;
+}
+
+
+/* -------------------------------------Styles Contact template ---------------------------- */
+.headers {
+    position: relative;
+    top: 0;
+    left: 0;
+    width: 100%;
+    background-color: rgba(2, 22, 36, 0.9);
+    min-height: 300px;
+}
+
+.headers .heading {
+    text-align: center;
+    color: #cccccc;
+    position: absolute;
+    bottom: 50px;
+    left: 50%;
+    transform: translateX(-50%);
+}
+
+.mail-draft {
+    float: left;
+    margin-top: 50px;
+    padding: 0 10%;
+    width: 45%;
+}
+
+.mail-draft, .reach-us {
+    animation: fade 2s;
+}
+
+.mail-draft .head, .reach-us .head {
+    font-size: x-large;
+    font-weight: bold;
+}
+
+.sender-name, .sender-email, .mail-content {
+    display: block;
+    width: 100%;
+    margin: 10px 0;
+    border: 1px solid #cccccc;
+    border-radius: 5px;
+    transition: 0.1s;
+}
+
+.sender-email:focus, .sender-name:focus, .mail-content:focus {
+    border-color: rgba(255, 203, 4, 0.3);
+    outline: 3px solid rgba(255, 203, 4, 0.3);
+}
+
+.sender-email, .sender-name {height: 30px;}
+
+.mail-content {height: 150px;}
+
+.submit-btn {
+    padding: 5px;
+    color: #fff;
+    opacity: 0.8;
+    height: 40px;
+    width: 70px;
+    font-size: 1.2rem;
+    background-color: #ffcb04;
+    border: none;
+    border-radius: 7px;
+}
+
+.submit-btn:hover, .submit-btn:active {opacity: 1;}
+
+.reach-us {
+    float: left;
+    padding: 10px;
+}
+
+.reach-us i {
+    font-size: x-large;
+    font-weight: 500;
+}
+
+.reach-us .detail {
+    margin-left: 20px;
+    color: #6C757D;
+}
+
+.clearfix::after {
+    content: "";
+    display: table;
+    clear: both;
+}
+
+
+/* -------------------------------------Styles About template ---------------------------- */
+.core-v i {font-size: larger;}
+
+.core-v p {
+    margin-left: 40px;
+}
+
+.wwa, .core-v {
+    padding: 0 20px;
+    animation-name: fade;
+    animation-duration: 2s;
+}
+
+.core-v {margin-left: 10px;}
+
+@keyframes fade {
+    from {opacity: 0;} to {opacity: 1};
+}
+
+
+/* -------------------------------------Styles Services template ---------------------------- */
+.services-main-page {
+    position: relative;
+    width: 100%;
+    animation-name: fade;
+    animation-duration: 2s;
+}
+
+.services-list {
+    position: absolute;
+    top: 100px;
+    left: 100px;
+    background-color: rgba(255, 203, 4, 0.5);
+    padding: 20px;
+    border-radius: 20px;
+}
+
 
 /* -------------------------------------Styles for Mobile Devices ---------------------------- */
 @media screen and (max-width: 420px) {
+    .welcome-message .message {
+        margin-top: 200px;
+        margin-left: 20px;
+    }
+    
+    .welcome-message .message #w2 {
+        font-weight: bolder;
+        font-size: 2.5rem;
+    }
+
+    .heaader {
+        min-height: 300px;
+    }
+
+
     .header-link {
         display: none;
+    }
+
+    .social-handle a:active {
+        color: #ffcb04;
     }
 
     .menu-button {
@@ -251,15 +459,42 @@ body {
     }
 
     .why-us i {
-        font-size: 3rem;
+        font-size: 2rem;
     }
 
-    .why-us h2, .why-us p {
-        margin-left: 60px;
+    .why-us h2 {
+        margin-left: 40px;
     }
+
+    .why-us p {margin-left: 0;}
 
     .why-us .content {
         width: 80%;
     }
-}
 
+    footer {
+        height: 200px;
+    }
+
+    /* --------Contact Template.......... */
+    .mail-draft, .reach-us {
+        float: none;
+        width: 80%;
+        margin-top: 60px;
+        padding: 0 10%;
+    }
+
+    .clearfix::after {
+        display: block;
+        clear: none;
+    }
+
+    /* --------Contact Template.......... */
+    .services-list {
+        padding: 0 5%;
+        width: 90%;
+        left: 0;
+        top: 0;
+        border-radius: 0;
+    }
+}
