@@ -1,3 +1,4 @@
+// Show/Hide overlay
 function show_overlay() {
     var overlay = document.getElementById("overlay");
     overlay.style.right = "0";
@@ -8,6 +9,7 @@ function hide_overlay() {
     overlay.style.right = "100%";
 }
 
+// Animates welcome message
 function animate_welcome_message() {
     var msg_box = document.getElementById("welcome-message");
     var w1 = document.getElementById("w1");
@@ -29,6 +31,8 @@ function animate_welcome_message() {
     }
 }
 
+
+// Displays fixed navbar when user scrolls beyond visible navbar
 var navbar = document.querySelector("#nav");
 var header = document.querySelector(".header-link"); 
 
@@ -41,7 +45,7 @@ setInterval(function() {
 }, 50);
 
 // Animates the welcome message on homepage
-animate_welcome_message();
+setTimeout(animate_welcome_message, 5000);
 setInterval(animate_welcome_message, 12000);
 
 var fade_command = "fade-in";
